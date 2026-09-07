@@ -1,12 +1,29 @@
+import TechStack from "@/components/TechStack";
+
+const stackData = [
+  {
+    category: "Frontend & UI",
+    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "HTML5/CSS3"],
+  },
+  {
+    category: "Backend & DB",
+    skills: ["Node.js", "Express", "PostgreSQL", "REST APIs"],
+  },
+  {
+    category: "AI & Web3 Focus",
+    skills: ["OpenAI API", "Smart Contracts", "Web3 Integration", "Automation"],
+  },
+];
+
 export default function About() {
   return (
     <main className="relative min-h-screen">
-      {/* Luz ambiental decorativa */}
+      {/* Ambient background glow */}
       <div className="absolute top-20 left-1/2 -translate-x-1/2 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-4xl mx-auto px-6 py-16 relative z-10 space-y-12">
         
-        {/* Encabezado Principal */}
+        {/* Main Header */}
         <section className="space-y-4 border-b border-white/10 pb-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/40 border border-cyan-800/40 text-xs font-mono text-cyan-400">
             <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
@@ -22,7 +39,7 @@ export default function About() {
           </p>
         </section>
 
-        {/* Historia / Bio en tarjeta Glassmorphism */}
+        {/* Story / Journey Card */}
         <section className="p-8 rounded-2xl bg-gray-950/40 border border-white/10 backdrop-blur-md space-y-6 relative group hover:border-cyan-500/30 transition-all duration-300">
           <div className="flex items-center gap-2 text-xs font-mono text-gray-400 uppercase tracking-wider">
             <span className="text-cyan-400">//</span> Background & Journey
@@ -44,42 +61,25 @@ export default function About() {
           </p>
         </section>
 
-        {/* Grid de Educación y Enfoque */}
-        <section className="grid md:grid-cols-2 gap-6">
-          {/* Educación */}
-          <div className="p-6 rounded-xl bg-gray-950/40 border border-white/10 backdrop-blur-md space-y-4">
-            <h2 className="text-lg font-bold font-mono text-gray-200 flex items-center gap-2">
-              <span className="text-cyan-400">#</span> Education & Training
-            </h2>
-            <ul className="space-y-3 text-sm text-gray-400 font-light">
-              <li className="flex flex-col">
-                <span className="text-gray-200 font-medium">B.S. in Software Development</span>
-                <span className="text-xs font-mono text-cyan-400/80">BYU-Idaho / BYU Pathway</span>
-              </li>
-              <li className="flex flex-col">
-                <span className="text-gray-200 font-medium">Full-Stack Web Developer Certification</span>
-                <span className="text-xs font-mono text-cyan-400/80">Henry Academy</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Áreas de Interés */}
-          <div className="p-6 rounded-xl bg-gray-950/40 border border-white/10 backdrop-blur-md space-y-4">
-            <h2 className="text-lg font-bold font-mono text-gray-200 flex items-center gap-2">
-              <span className="text-cyan-400">#</span> Tech Focus
-            </h2>
-            <div className="flex flex-wrap gap-2 pt-1">
-              {['Full-Stack Dev', 'React / Next.js', 'Node.js', 'TypeScript', 'AI Integration', 'Web3 Systems', 'PostgreSQL'].map((skill) => (
-                <span 
-                  key={skill}
-                  className="px-2.5 py-1 rounded-md text-xs font-mono bg-cyan-950/30 text-cyan-300 border border-cyan-800/30"
-                >
-                  {skill}
-                </span>
-              ))}
+        {/* Education Section */}
+        <section className="p-6 rounded-xl bg-gray-950/40 border border-white/10 backdrop-blur-md space-y-4">
+          <h2 className="text-lg font-bold font-mono text-gray-200 flex items-center gap-2">
+            <span className="text-cyan-400">#</span> Education & Credentials
+          </h2>
+          <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-400 font-light">
+            <div className="flex flex-col p-3 rounded-lg bg-white/5 border border-white/5">
+              <span className="text-gray-200 font-medium">B.S. in Software Development</span>
+              <span className="text-xs font-mono text-cyan-400/80 mt-1">BYU-Idaho / BYU Pathway</span>
+            </div>
+            <div className="flex flex-col p-3 rounded-lg bg-white/5 border border-white/5">
+              <span className="text-gray-200 font-medium">Full-Stack Web Developer Certification</span>
+              <span className="text-xs font-mono text-cyan-400/80 mt-1">Henry Academy</span>
             </div>
           </div>
         </section>
+
+        {/* Custom Server Component Section */}
+        <TechStack categories={stackData} statusMessage="Production Ready" />
 
       </div>
     </main>
