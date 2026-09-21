@@ -1,19 +1,21 @@
 import ProjectList from '@/components/ProjectList';
+import { getProjects } from '@/lib/projects-db';
 
-const projects = [
-  {
-    title: 'E-Commerce Dashboard',
-    description: 'A full-stack Next.js app with AI-powered analytics for product and inventory management.',
-    technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'OpenAI API'],
-    link: 'https://github.com/your-username/project1'
-  },
-  {
-    title: 'Decentralized Weather DApp',
-    description: 'A Web3 application fetching weather data on-chain using smart contracts and oracle networks.',
-    technologies: ['React', 'Solidity', 'Ethers.js', 'Tailwind CSS'],
-    link: 'https://github.com/your-username/project2'
-  }
-];
+// const projects = [
+  // {
+    // title: 'E-Commerce Dashboard',
+    // description: 'A full-stack Next.js app with AI-powered analytics for product and inventory management.',
+    // technologies: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'OpenAI API'],
+    // link: 'https://github.com/your-username/project1'
+  // },
+  // {
+    // title: 'Decentralized Weather DApp',
+    // description: 'A Web3 application fetching weather data on-chain using smart contracts and oracle networks.',
+    // technologies: ['React', 'Solidity', 'Ethers.js', 'Tailwind CSS'],
+    // link: 'https://github.com/your-username/project2'
+  // }
+// ];
+const projects = await getProjects()
 
 export default function Home() { 
   return (
