@@ -1,9 +1,10 @@
+import Link from 'next/link';
 import ProjectList from '@/components/ProjectList';
 import { getProjects } from '@/lib/projects-db';
 
-const projects = await getProjects()
+export default async function Home() {
+  const projects = await getProjects();
 
-export default function Home() { 
   return (
     <main className="min-h-screen bg-grid-pattern relative overflow-hidden">
       {/* Luz ambiental decorativa de fondo */}
@@ -34,13 +35,32 @@ export default function Home() {
           </p>
 
           {/* Botones de Acción (CTA) */}
-          <div className="flex justify-center gap-4 pt-4">
+          <div className="flex flex-wrap justify-center gap-4 pt-4">
             <a 
               href="#projects" 
               className="px-6 py-3 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold text-sm transition-all duration-200 shadow-lg shadow-cyan-500/20"
             >
               View Projects
             </a>
+
+            <Link
+              href="/projects"
+              className="px-6 py-3 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-gray-200 font-medium text-sm transition-all duration-200 backdrop-blur-md"
+            >
+              All Projects
+            </Link>
+            <Link
+              href="/open-source"
+              className="px-6 py-3 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-gray-200 font-medium text-sm transition-all duration-200 backdrop-blur-md"
+            >
+              Open-Source Projects
+            </Link>
+            <Link
+              href="/school"
+              className="px-6 py-3 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-gray-200 font-medium text-sm transition-all duration-200 backdrop-blur-md"
+            >
+              School Projects
+            </Link>
             <a 
               href="https://github.com/your-username" 
               target="_blank" 
